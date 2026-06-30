@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-900: hsl(209, 23%, 22%);
+    --blue-950: hsl(207, 26%, 17%);
+    --grey-950: hsl(200, 15%, 8%);
+    --grey-400: hsl(0, 0%, 50%);
+    --grey-50: hsl(0, 0%, 99%);
+    --white: hsl(0, 100%, 100%);
+}
