@@ -17,3 +17,11 @@
 html, body {
     font-family: "Nunito Sans", sans-serif;
 }
+
+html {
+    background-color: var(--grey-50);
+}
+
+html.dark {
+    background-color: var(--blue-950);
+}
