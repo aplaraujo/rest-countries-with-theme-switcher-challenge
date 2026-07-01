@@ -1,1 +1,5 @@
-<button type="button">click</button>
+@if(darkMode()) {
+    <button (click)="toggle()" class="dark-mode-button"><img src="moon-svgrepo-com (1).svg" alt="Moon">Dark Mode</button>
+} @else {
+    <button (click)="toggle()" class="light-mode-button"><img src="moon-svgrepo-com.svg" alt="Moon">Dark Mode</button>
+}
