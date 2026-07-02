@@ -1,27 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import './reset.scss';
 
-:root {
-    --blue-900: #2B3945;
-    --blue-950: #202C37;
-    --grey-950: #111517;
-    --grey-400: #808080;
-    --grey-50: #FCFCFC;
-    --white: #FFFFFF;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-html, body {
+html, body, button {
     font-family: "Nunito Sans", sans-serif;
 }
 
-html {
-    background-color: var(--grey-50);
+:root {
+    --primary: hsl(0, 100%, 100%);
+    --body: hsl(0, 0%, 99%);
+    --text-body: hsl(200, 15%, 8%);
+    --text-menu: hsl(200, 15%, 8%);
+    --shadow: 0px 8px 13px -6px hsl(0, 0%, 50%);
+    --color-elements: hsl(0, 100%, 100%);
 }
 
-html.dark {
-    background-color: var(--blue-950);
+:root .dark-mode {
+    --primary: hsl(209, 23%, 22%);
+    --body: hsl(207, 26%, 17%);
+    --text-body: hsl(0, 100%, 100%);
+    --text-menu: hsl(0, 100%, 100%);
+    --shadow: 0px 8px 13px -6px hsl(209, 23%, 22%);
+    --color-elements: hsl(209, 23%, 22%);
+}
+
+body {
+    background-color: var(--body);
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
