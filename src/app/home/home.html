@@ -1,16 +1,16 @@
 <app-header />
 
 <main class="container">
-    <form class="form-container" [formGroup]="countryForm">
+    <form class="form-container">
         <label for="search">
             <div class="search-container">
                 <div class="search-icon"></div>
-                <input type="text" placeholder="Search for a country...">
+                <input type="text" placeholder="Search for a country..." [formControl]="country">
             </div>
         </label>
         <label for="region">
             <select (change)="handleSelect($event)" name="region" id="region" class="region-select"
-                formControlName="region">
+                [formControl]="region">
                 <option value="">Filter by Region</option>
                 @for(region of regionArr; track region) {
                 <option [value]="region">{{region}}</option>
@@ -20,7 +20,7 @@
     </form>
 
     <ul class="country-container">
-        @for(country of countryList | regionFilter : regionOption; track country) {
+        @for(country of ((filteredCountries | async) || []) | regionFilter : regionOption; track country) {
         <li class="country-card">
             <img src="{{country.flag}}" alt="{{country.name}}" class="country-image">
             <div class="country-content">
