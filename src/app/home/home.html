@@ -1,7 +1,7 @@
 <app-header />
 
 <main class="container">
-    <form class="form-container">
+    <form class="form-container" [formGroup]="countryForm">
         <label for="search">
             <div class="search-container">
                 <div class="search-icon"></div>
@@ -9,30 +9,29 @@
             </div>
         </label>
         <label for="region">
-            <select name="region" id="region" class="region-select">
-                <option>Filter by Region</option>
+            <select (change)="handleSelect($event)" name="region" id="region" class="region-select"
+                formControlName="region">
+                <option value="">Filter by Region</option>
                 @for(region of regionArr; track region) {
-                <div class="region-select-container">
-                    <option [value]="region">{{region}}</option>
-                </div>
+                <option [value]="region">{{region}}</option>
                 }
             </select>
         </label>
     </form>
 
     <ul class="country-container">
-        @for(country of countryList; track country) {
-            <li class="country-card">
-                <img src="{{country.flag}}" alt="{{country.name}}" class="country-image">
-                <div class="country-content">
-                    <h2>{{country.name}}</h2>
-                    <div class="country-content-info">
-                        <p><span class="info">Population:</span> {{country.population}}</p>
-                        <p><span class="info">Region:</span> {{country.region}}</p>
-                        <p><span class="info">Capital:</span> {{country.capital}}</p>
-                    </div>
+        @for(country of countryList | regionFilter : regionOption; track country) {
+        <li class="country-card">
+            <img src="{{country.flag}}" alt="{{country.name}}" class="country-image">
+            <div class="country-content">
+                <h2>{{country.name}}</h2>
+                <div class="country-content-info">
+                    <p><span class="info">Population:</span> {{country.population}}</p>
+                    <p><span class="info">Region:</span> {{country.region}}</p>
+                    <p><span class="info">Capital:</span> {{country.capital}}</p>
                 </div>
-            </li>
+            </div>
+        </li>
         }
     </ul>
 </main>
