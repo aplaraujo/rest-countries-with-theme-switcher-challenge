@@ -9,11 +9,13 @@
             </div>
         </label>
         <label for="region">
-            <select name="region" id="region">
-                <option value="0">
-                    Filter by Region
-                    <div class="select-icon"></div>
-                </option>
+            <select name="region" id="region" class="region-select">
+                <option>Filter by Region</option>
+                @for(region of regionArr; track region) {
+                    <div class="region-select-container">
+                        <option [value]="region">{{region}}</option>
+                    </div>
+                }
             </select>
         </label>
     </form>

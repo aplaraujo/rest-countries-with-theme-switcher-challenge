@@ -1,17 +1,104 @@
-.container {
-    width: 1440px;
+:host {
+  .container {
+    width: 90rem;
+    max-width: calc(90% - 0.625rem);
     margin: 0 auto;
-}
+  }
 
-// .some-icon {
-//     width: 20px;
-//     height: 20px;
-//   background-color: red;
-//   -webkit-mask-size: contain;
-//   mask-size: contain;
-//   -webkit-mask-position: center;
-//   mask-position: center;
-//   -webkit-mask-repeat: no-repeat;
-//   mask-repeat: no-repeat;
-//   mask-image: url('../../../public/icons8-pesquisar.svg');
-// }
+  .form-container {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 37.5rem) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .search-container {
+    width: 420px;
+    max-width: calc(90% - 0.5px);
+    margin: 0 auto;
+    padding: 18px 16px;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow-components);
+    border-radius: 5px;
+
+    input::placeholder {
+        font-family: "Nunito Sans", sans-serif;
+        color: var(--text-body);
+    }
+
+    @media (min-width: 37.5rem) {
+      margin: 0;
+    }
+
+    .search-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      background-color: var(--text-body);
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mask-image: url('../../../public/icons8-pesquisar.svg');
+    }
+  }
+
+  select {
+    appearance: base-select;
+    width: 200px;
+    margin-top: 1.5rem;
+    margin-left: 5px;
+    padding: 18px 8px;
+    background-color: var(--primary);
+    color: var(--text-body);
+    box-shadow: var(--shadow-components);
+    border-radius: 5px;
+
+    @media (min-width: 37.5rem) {
+        margin: 0;
+    }
+  }
+
+  ::picker(select) {
+    appearance: base-select;
+    padding: 10px 5px;
+    line-height: 1.5;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--text-body);
+    box-shadow: var(--shadow-components);
+    z-index: 1;
+  }
+
+  option {
+    padding: 5px 0;
+  }
+
+//   .region-select {
+//     width: 200px;
+//     margin-top: 1.5rem;
+//     margin-left: 5px;
+//     padding: 10px 5px;
+//     font-family: "Nunito Sans", sans-serif;
+//     background-color: var(--primary);
+//     color: var(--text-body);
+//     border: 1px solid red;
+//     box-shadow: var(--shadow-components);
+
+//     @media (min-width: 37.5rem) {
+//       margin: 0;
+//     }
+//   }
+
+}

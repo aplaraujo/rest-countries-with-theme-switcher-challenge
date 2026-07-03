@@ -8,5 +8,5 @@ import { Header } from '../header/header';
   styleUrl: './home.scss',
 })
 export class Home {
-
+  regionArr:string[] = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
 }

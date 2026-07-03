@@ -11,7 +11,8 @@ html, body, button {
     --body: hsl(0, 0%, 99%);
     --text-body: hsl(200, 15%, 8%);
     --text-menu: hsl(200, 15%, 8%);
-    --shadow: 0px 8px 13px -6px hsl(0, 0%, 50%);
+    --shadow-header: 0px 8px 13px -6px hsl(0, 0%, 50%);
+    --shadow-components: 1px 2px 15px -1px hsl(0, 0%, 50%);
     --color-elements: hsl(0, 100%, 100%);
 }
 
@@ -20,7 +21,8 @@ html, body, button {
     --body: hsl(207, 26%, 17%);
     --text-body: hsl(0, 100%, 100%);
     --text-menu: hsl(0, 100%, 100%);
-    --shadow: 0px 8px 13px -6px hsl(209, 23%, 22%);
+    --shadow-header: 0px 8px 13px -6px hsl(209, 23%, 22%);
+    --shadow-components: 1px 2px 15px -1px hsl(209, 23%, 22%);
     --color-elements: hsl(209, 23%, 22%);
 }
 
