@@ -29,8 +29,8 @@
     border-radius: 5px;
 
     input::placeholder {
-        font-family: "Nunito Sans", sans-serif;
-        color: var(--text-body);
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--text-body);
     }
 
     @media (min-width: 37.5rem) {
@@ -64,7 +64,7 @@
     border-radius: 5px;
 
     @media (min-width: 37.5rem) {
-        margin: 0;
+      margin: 0;
     }
   }
 
@@ -85,20 +85,51 @@
     padding: 5px 0;
   }
 
-//   .region-select {
-//     width: 200px;
-//     margin-top: 1.5rem;
-//     margin-left: 5px;
-//     padding: 10px 5px;
-//     font-family: "Nunito Sans", sans-serif;
-//     background-color: var(--primary);
-//     color: var(--text-body);
-//     border: 1px solid red;
-//     box-shadow: var(--shadow-components);
+  .country-container {
+    width: 90rem;
+    max-width: calc(95% - 0.5px);
+    margin: 2.5rem auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 2rem;
+  }
 
-//     @media (min-width: 37.5rem) {
-//       margin: 0;
-//     }
-//   }
+  .country-card {
+    height: 350px;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--primary);
+    color: var(--text-body);
+    box-shadow: var(--shadow-components);
+  }
+
+  .country-content {
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    &-info {
+      line-height: 1.5;
+
+      p {
+        .info {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  img.country-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
 
 }

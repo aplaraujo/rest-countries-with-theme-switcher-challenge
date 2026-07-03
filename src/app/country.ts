@@ -16,12 +16,12 @@ export interface ICountry {
   borders: string[]
   nativeName: string
   numericCode: string
-  flags: Flags
-  currencies: Currency[]
-  languages: Language[]
-  translations: Translations
+  flags: IFlags
+  currencies: ICurrency[]
+  languages: ILanguage[]
+  translations: ITranslations
   flag: string
-  regionalBlocs: RegionalBloc[]
+  regionalBlocs: IRegionalBloc[]
   cioc: string
   independent: boolean
 }
