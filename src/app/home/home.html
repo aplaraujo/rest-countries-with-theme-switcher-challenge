@@ -22,15 +22,17 @@
     <ul class="country-container">
         @for(country of ((filteredCountries | async) || []) | regionFilter : regionOption; track country) {
         <li class="country-card">
-            <img src="{{country.flag}}" alt="{{country.name}}" class="country-image">
-            <div class="country-content">
-                <h2>{{country.name}}</h2>
-                <div class="country-content-info">
-                    <p><span class="info">Population:</span> {{country.population}}</p>
-                    <p><span class="info">Region:</span> {{country.region}}</p>
-                    <p><span class="info">Capital:</span> {{country.capital}}</p>
+            <a href="/details/AFG">
+                <img src="{{country.flag}}" alt="{{country.name}}" class="country-image">
+                <div class="country-content">
+                    <h2>{{country.name}}</h2>
+                    <div class="country-content-info">
+                        <p><span class="info">Population:</span> {{country.population}}</p>
+                        <p><span class="info">Region:</span> {{country.region}}</p>
+                        <p><span class="info">Capital:</span> {{country.capital}}</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </li>
         }
     </ul>
