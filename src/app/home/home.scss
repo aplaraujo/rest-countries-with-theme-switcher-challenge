@@ -96,15 +96,17 @@
   .country-container {
     width: 90rem;
     max-width: calc(95% - 0.5px);
-    margin: 2.5rem auto;
     padding: 1rem;
     display: grid;
+    margin: 3rem auto;
     grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    gap: 2.5rem;
   }
 
   .country-card {
-    width: 18.75rem;
+    width: 18rem;
     height: 21.875rem;
     grid-template-rows: subgrid;
     grid-row: span 3;
