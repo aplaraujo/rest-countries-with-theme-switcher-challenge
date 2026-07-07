@@ -22,7 +22,7 @@
     <ul class="country-container">
         @for(country of ((filteredCountries | async) || []) | regionFilter : regionOption; track country) {
         <li class="country-card">
-            <a href="/details/AFG">
+            <a [routerLink]="['details', country.alpha3Code]">
                 <img src="{{country.flag}}" alt="{{country.name}}" class="country-image">
                 <div class="country-content">
                     <h2>{{country.name}}</h2>

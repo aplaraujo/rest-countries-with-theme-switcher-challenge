@@ -3,8 +3,47 @@
 <main class="container">
     <button type="button" class="back-button">
         <div class="back-button__arrow-icon"></div>
-        Back
+        <a [routerLink]="['']">Back</a>
     </button>
+
+    <div class="country-container">
+        <div class="country-flag">
+            <img [src]="country?.flag" alt="{{country?.name}}">
+        </div>
+        <div class="country-info">
+            <h1>{{country?.name}}</h1>
+            <div class="country-info-container">
+                <div class="first-info">
+                    <p>Native Name: {{country?.nativeName}}</p>
+                    <p>Population: {{country?.population}}</p>
+                    <p>Region: {{country?.region}}</p>
+                    <p>Sub Region: {{country?.subregion}}</p>
+                    <p>Capital: {{country?.capital}}</p>
+                </div>
+                <div class="second-info">
+                    <p>Top Level Domain: {{country?.topLevelDomain}}</p>
+                    <p>Currencies: 
+                        @for(currency of country?.currencies; track currency) {
+                            {{currency.name}}
+                        }
+                    </p>
+                    <p>
+                        Languages:
+                        @for(language of country?.languages; track language) {
+                            {{language.name}}
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p>Border Countries:
+            @for(border of country?.borders; track border) {
+                <button type="button">
+                    {{border | alphaCodeToName }}
+                </button>
+            }
+        </p>
+    </div>
 </main>
 
 

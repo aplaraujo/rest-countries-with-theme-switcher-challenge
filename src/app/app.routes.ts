@@ -9,7 +9,7 @@ export const routes: Routes = [
         title: 'Countries Home Page'
     },
     {
-        path: 'details/:id',
+        path: 'details/:alpha3Code',
         component: Details,
         title: 'Country Details Page'
     }

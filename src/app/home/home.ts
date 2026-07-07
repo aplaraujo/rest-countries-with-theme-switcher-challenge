@@ -13,10 +13,11 @@ import { CountryService } from '../country-service';
 import { ICountry } from '../country';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RegionFilterPipe } from '../region-filter-pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [Header, RegionFilterPipe, ReactiveFormsModule, CommonModule, AsyncPipe],
+  imports: [Header, RegionFilterPipe, ReactiveFormsModule, CommonModule, AsyncPipe, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
