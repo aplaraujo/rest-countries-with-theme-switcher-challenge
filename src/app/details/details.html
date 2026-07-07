@@ -1,9 +1,9 @@
 <app-header/>
 
 <main class="container">
-    <button type="button" class="back-button">
+    <button type="button" class="back-button" (click)="mainPage()">
         <div class="back-button__arrow-icon"></div>
-        <a [routerLink]="['']">Back</a>
+        Back
     </button>
 
     <div class="country-container">
@@ -38,7 +38,7 @@
         </div>
         <p>Border Countries:
             @for(border of country?.borders; track border) {
-                <button type="button">
+                <button type="button" (click)="countryPage(border)">
                     {{border | alphaCodeToName }}
                 </button>
             }

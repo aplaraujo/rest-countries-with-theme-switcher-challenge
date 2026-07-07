@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CountryService } from '../country-service';
 import { ICountry } from '../country';
 import { Header } from '../header/header';
@@ -16,6 +16,7 @@ export class Details {
   route: ActivatedRoute = inject(ActivatedRoute);
   countryService = inject(CountryService);
   country: ICountry | undefined;
+  router = inject(Router);
 
   constructor() {
     this.route.params.subscribe((param) => {
@@ -23,5 +24,13 @@ export class Details {
       this.country = this.countryService.getCountryByAlphaCode(alphaCode);
       this.changeDetectorRef.markForCheck();
     })
+  }
+
+  mainPage() {
+    this.router.navigate(['']);
+  }
+
+  countryPage(alpha3Code: string) {
+    this.router.navigate(['/details', alpha3Code]);
   }
 }
