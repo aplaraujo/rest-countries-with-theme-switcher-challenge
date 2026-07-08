@@ -7,6 +7,13 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: 'details/:alpha3Code',
-    renderMode: RenderMode.Prerender
+    renderMode: RenderMode.Prerender,
+    getPrerenderParams: async () => {
+      return [
+        { id: '1' },
+        { id: '2' },
+        { id: '3' },
+      ];
+    },
   }
 ];
